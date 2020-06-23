@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Members API</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <form action="/api/members" method="post">
+                    <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" aria-describedby="name">
+                    
+                    </div>
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control" id="email">
+                    <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add a New Member</button>
+                </form>
+            </div><!--/column-->
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item">GET
+                        <ul class="list-group">
+                            <li class="list-group-item">Homepage: GET /</li>
+                            <li class="list-group-item">Get all members: GET /api/members</li>
+                            <li class="list-group-item">Get single member: GET /api/members/:id</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">POST
+                        <ul class="list-group">
+                            <li class="list-group-item">Create a new member: Go to homepage,add name and email then submit</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">DELETE
+                        <ul class="list-group">
+                            <li class="list-group-item">To Delete a member: Go to homepage, click delete button next to member</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">UPDATE
+                        <ul class="list-group">
+                            <li class="list-group-item">To update a member: Click update button next to member</li>
+                        </ul>  
+                    </li>     
+                </ul>
+
+            </div>
+        </div><!--/row-->
+        <div class="row mt-5">
+            <div class="column">
+                
+            </div><!--/column-->
+        </div><!--/row-->
+    </div><!--/container-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

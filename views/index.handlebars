@@ -1,0 +1,68 @@
+ <div class="row mt-3 mb-5">          
+            <div class="col-4">
+                <form action="/api/members/create" method="post">
+                    <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" aria-describedby="name">
+                    
+                    </div>
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control" id="email">
+                    <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <button type="submit" class="btn" style="background-color:darkgoldenrod; color:white">Add a New Member</button>
+                </form>
+            </div><!--/column-->
+            <div class="col-3">
+                <ul class="list-group">Users Data
+                     {{#each members}}
+                        <li class="list-group-item">
+                            <span class="font-weight-bold">Id:</span> {{this.id}}<br />
+                            <span class="font-weight-bold">Name: </span>{{this.name}} <br />
+                            <span class="font-weight-bold">Email:</span> {{this.email}}
+                            {{!--<form method="post" action="/api/members/delete/{{this.id}}?_method=delete">
+                            <button type="submit">Delete</button>
+                            </form>
+                            <form method="post" action="/api/members/update/{{this.id}}?_method=put">
+                            <button type="submit">Update</button>
+                            </form>--}}
+                        </li>
+                     {{/each}}
+                </ul>
+                
+            </div><!--/column-->   
+            <div class="col-5">
+                <ul class="list-group">Use Postman --
+                    <li class="list-group-item">GET - to get user data 
+                        <ul class="list-group">
+                            <li class="list-group-item">Homepage: GET /</li>
+                            <li class="list-group-item">Get all members: GET /api/members</li>
+                            <li class="list-group-item">Get single member: GET /api/members/:id</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">POST - to create user 
+                        <ul class="list-group">
+                            <li class="list-group-item">POST api/members/create</li>
+                            <li class="list-group-item">or Fill the form and hit submit</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">DELETE - to delete user
+                        <ul class="list-group">
+                            <li class="list-group-item">To Delete a member: DELETE api/members/delete/:id</li>
+                        </ul>  
+                    </li>
+                    <li class="list-group-item">UPDATE - to update user
+                        <ul class="list-group">
+                            <li class="list-group-item">To update a member: /api/members/update/:id</li>
+                        </ul>  
+                    </li>     
+                </ul>
+
+            </div><!--/column--->
+    
+        </div>
+        <div class="row">
+            
+            
+        </div><!--/row-->
