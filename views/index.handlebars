@@ -16,11 +16,15 @@
             </div><!--/column-->
             <div class="col-3">
                 <ul class="list-group">Users Data
+                    {{#if members.length}}
                      {{#each members}}
                         <li class="list-group-item">
                             <span class="font-weight-bold">Id:</span> {{this.id}}<br />
                             <span class="font-weight-bold">Name: </span>{{this.name}} <br />
                             <span class="font-weight-bold">Email:</span> {{this.email}}
+                             <a  href="/edit/{{this.id}}?name={{this.name}}&email={{this.email}}" id={{this.id}} type="submit" class="btn edit-btn" style="background-color:darkgoldenrod; color:white">Edit</a>
+                            <button id={{this.id}} type="submit" class="btn delete-btn" style="background-color:darkgoldenrod; color:white">Delete</button>
+
                             {{!--<form method="post" action="/api/members/delete/{{this.id}}?_method=delete">
                             <button type="submit">Delete</button>
                             </form>
@@ -29,6 +33,9 @@
                             </form>--}}
                         </li>
                      {{/each}}
+                     {{else}}
+                        <h3>No Members Found!!</h3>
+                    {{/if}}
                 </ul>
                 
             </div><!--/column-->   
@@ -50,11 +57,13 @@
                     <li class="list-group-item">DELETE - to delete user
                         <ul class="list-group">
                             <li class="list-group-item">To Delete a member: DELETE api/members/delete/:id</li>
+                            <li class="list-group-item">or hit delete button</li>
                         </ul>  
                     </li>
                     <li class="list-group-item">UPDATE - to update user
                         <ul class="list-group">
                             <li class="list-group-item">To update a member: /api/members/update/:id</li>
+                            <li class="list-group-item">or hit edit and make changes and then hit update button</li>
                         </ul>  
                     </li>     
                 </ul>

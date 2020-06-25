@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <!-- adding jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="image"></div>
+    <script type="text/javascript">
+      /////////// DELETE///////////////////////
+      const id_to_deleted = 'a808b65d-38b2-467e-98ec-03ae15a2e31a';
+      function deleteMember(response) {
+        console.log(response);
+      }
+
+      fetch(
+        `https://members-rest-api.herokuapp.com/api/members/delete/${id_to_deleted}`,
+        {
+          // headers: {Authorization:'Client-ID f7a64103f53cc45537eea148e1ed9ea5afa9ba29a93302e0743d3b58d733712e'},
+          method: 'DELETE',
+        }
+      )
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
+
+      ////////////////////////////////////UPDATE//////////
+      const update_id = '852838fa-0837-442b-8bd8-7ba2c36222e7';
+      const someData = {
+        name: 'jasnoor',
+        email: 'jasnoor_singh@gmail.com',
+      };
+
+      fetch(
+        `https://members-rest-api.herokuapp.com/api/members/update/${update_id}`,
+        {
+          // headers: {Authorization:'Client-ID f7a64103f53cc45537eea148e1ed9ea5afa9ba29a93302e0743d3b58d733712e'},
+          method: 'PUT',
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8', // Indicates the content
+          },
+          body: JSON.stringify(someData),
+        }
+      )
+        .then(function (response) {
+          console.log(response);
+          window.location.replace('https://members-rest-api.herokuapp.com/');
+        })
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>
